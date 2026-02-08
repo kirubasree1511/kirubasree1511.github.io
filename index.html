@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thangoo ❤️</title>
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  background:#ffe6eb;
+  margin-top:100px;
+}
+button{
+  padding:12px 22px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  margin:10px;
+}
+#yes{background:#ff4d6d;color:white;}
+#no{position:absolute;}
+</style>
+</head>
+
+<body>
+
+<h2>Karuva kunjii thangooo ❤️<br>Will you be my Valentine?</h2>
+
+<button id="yes" onclick="funYes()">YES</button>
+<button id="no" onclick="moveNo()">NO</button>
+
+<script>
+let messages = [
+"Thango konjam yosichi click panu 😌",
+"Karuva kunji sure ah?",
+"Click pana poriyah?",
+"Idhan un final decision ah?",
+"Okay okay last chance nala think panikoo 🙂",
+"Thangoooo mind change aagudha?",
+"Karuva kunjii pavum pona poogudhu nu veduren 🥺"
+];
+
+let count = 0;
+
+function funYes(){
+ if(count < messages.length){
+   alert(messages[count]);
+   count++;
+ }else{
+   document.body.innerHTML="<h1>I knew it ❤️ Thangoo 😘</h1>";
+ }
+}
+
+function moveNo(){
+ document.getElementById("no").style.top=Math.random()*300+"px";
+ document.getElementById("no").style.left=Math.random()*300+"px";
+}
+</script>
+
+</body>
+</html>
