@@ -1,74 +1,57 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Thangoo ❤️</title>
-
+<title>Friendship 💙</title>
 <style>
 body{
   text-align:center;
   font-family:Arial;
-  background:#ffe6eb;
+  background:#e6f7ff;
   margin-top:100px;
 }
-
 button{
   padding:12px 22px;
   font-size:18px;
   border:none;
   border-radius:10px;
   margin:10px;
-  cursor:pointer;
 }
-
-#yes{
-  background:#ff4d6d;
-  color:white;
-}
-
-#no{
-  position:absolute;
-}
+#yes{background:#4da6ff;color:white;}
+#no{position:absolute;}
 </style>
 </head>
 
 <body>
 
-<h2>Karuva kunjii thangooo ❤️<br>Will you be my Valentine?</h2>
+<h2>Karuva Mama 💗🫂<br>Will you be my lifelong friend?</h2>
 
 <button id="yes" onclick="funYes()">YES</button>
-<button id="no" onclick="moveNo()">NO</button>
+<button id="no" onmouseover="moveNo()">NO</button>
 
 <script>
 let messages = [
-"Thango konjam yosichi click panu 😌",
-"Karuva kunji sure ah?",
-"Click pana poriyah?",
-"Idhan un final decision ah?",
-"Okay okay last chance nala think panikoo 🙂",
-"Thangoooo mind change aagudha?",
-"Karuva kunjii pavum pona poogudhu nu veduren 🥺"
+"Konjam yosichu click pannu 😌",
+"Sure ah friend ah irupa? 🤝",
+"Last chance think panniko 🙂",
+"Best friend ah irukanum promise!",
+"Okay okay click pannidu 😄"
 ];
 
 let count = 0;
 
 function funYes(){
- let btn = document.getElementById("yes");
-
  if(count < messages.length){
-   btn.innerText = messages[count];
-   btn.style.position = "absolute";
-   btn.style.top = Math.random()*400 + "px";
-   btn.style.left = Math.random()*300 + "px";
+   alert(messages[count]);
    count++;
  }else{
-   document.body.innerHTML="<h1>Yay ❤️ Thangoo!</h1>";
+   document.body.innerHTML="<h1>Yay 💗 Best Friends Forever!</h1>";
  }
 }
 
 function moveNo(){
  let btn = document.getElementById("no");
- btn.style.top = Math.random()*400 + "px";
- btn.style.left = Math.random()*300 + "px";
+ btn.style.top=Math.random()*300+"px";
+ btn.style.left=Math.random()*300+"px";
 }
 </script>
 
