@@ -1,20 +1,23 @@
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html>
 <head>
   <title>Friendship</title>
+
   <style>
     body{
       background:#f7e9ea;
       font-family:Arial;
+      text-align:center;
       height:100vh;
       overflow:hidden;
     }
 
-    #question{
+    #funny{
       position:absolute;
-      left:35%;
-      top:30%;
-      text-align:center;
+      left:40%;
+      top:40%;
+      font-size:18px;
+      font-weight:bold;
     }
 
     button{
@@ -25,49 +28,46 @@
       cursor:pointer;
     }
 
-    #yes{
-      background:#ff4d6d;
-      color:white;
-      position:absolute;
-      left:40%;
-      top:50%;
-    }
-
-    #no{
-      position:absolute;
-      left:52%;
-      top:50%;
-    }
+    #yes{background:#ff4d6d;color:white;}
+    #no{position:absolute;}
   </style>
 </head>
 
 <body>
 
-<h2 id="question">Konjam yosichu click pannu 😉</h2>
+<h2>Karuvа Mama 💗<br>Will you be my Lifelong friend?</h2>
 
-<button id="yes" onclick="nextQuestion()">YES</button>
+<div id="funny">Konjam yosichu click pannu 😉</div>
+
+<button onclick="nextFunny()">YES</button>
 <button id="no" onmouseover="moveNo()">NO</button>
 
 <script>
-let questions = [
+let lines = [
+"Konjam yosichu click pannu 😉",
 "Sure ah friend ah irupa? 🤝",
 "Last chance think panniko 🙂",
 "Best friend ah irukanum promise!",
-"Daily pesuvom la? 😌",
-"Okay okay click pannidu 😁"
+"Okay okay click pannidu 😄"
 ];
 
 let count = 0;
 
-function nextQuestion(){
-  let q = document.getElementById("question");
+function nextFunny(){
+  let f = document.getElementById("funny");
 
-  q.innerHTML = questions[count % questions.length];
+  if(count < lines.length){
+    f.innerHTML = lines[count];
 
-  q.style.left = Math.random()*300 + "px";
-  q.style.top = Math.random()*300 + "px";
+    f.style.left = Math.random()*300 + "px";
+    f.style.top = Math.random()*300 + "px";
 
-  count++;
+    count++;
+  }else{
+    f.innerHTML = "Friends forever Karuvaya 💗🫂";
+    f.style.left = "40%";
+    f.style.top = "40%";
+  }
 }
 
 function moveNo(){
