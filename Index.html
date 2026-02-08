@@ -2,15 +2,13 @@
 <html>
 <head>
 <title>Friendship</title>
-
 <style>
 body{
   text-align:center;
   font-family:Arial;
-  background:#e6d3d3;
+  background:#ffe6eb;
   margin-top:100px;
 }
-
 button{
   padding:12px 22px;
   font-size:18px;
@@ -18,34 +16,17 @@ button{
   border-radius:10px;
   margin:10px;
 }
-
 #yes{background:#ff4d6d;color:white;}
 #no{position:absolute;}
-
-#msgBox{
-  display:none;
-  background:white;
-  padding:20px;
-  width:260px;
-  border-radius:12px;
-  margin:auto;
-  margin-top:30px;
-  box-shadow:0 4px 10px rgba(0,0,0,0.2);
-}
 </style>
 </head>
 
 <body>
 
-<h2>Karuva Mama 💗<br>Will you be my lifelong friend?</h2>
+<h2>Karuva Mama 💗<br>Will you be my Lifelong friend?</h2>
 
 <button id="yes" onclick="funYes()">YES</button>
 <button id="no" onmouseover="moveNo()">NO</button>
-
-<div id="msgBox">
-  <p id="msgText"></p>
-  <button onclick="closeMsg()">OK</button>
-</div>
 
 <script>
 let messages = [
@@ -60,22 +41,31 @@ let count = 0;
 
 function funYes(){
  if(count < messages.length){
-   document.getElementById("msgBox").style.display="block";
-   document.getElementById("msgText").innerText = messages[count];
+   showMessage(messages[count]);
    count++;
  }else{
    document.body.innerHTML="<h1>Yay 💗 Best Friends!</h1>";
  }
 }
 
-function closeMsg(){
- document.getElementById("msgBox").style.display="none";
-}
-
 function moveNo(){
- let btn = document.getElementById("no");
+ let btn=document.getElementById("no");
  btn.style.top=Math.random()*300+"px";
  btn.style.left=Math.random()*300+"px";
+}
+
+function showMessage(text){
+ let box=document.createElement("div");
+ box.style.position="fixed";
+ box.style.bottom="20px";
+ box.style.left="50%";
+ box.style.transform="translateX(-50%)";
+ box.style.background="white";
+ box.style.padding="15px";
+ box.style.borderRadius="10px";
+ box.style.boxShadow="0 0 10px rgba(0,0,0,0.2)";
+ box.innerHTML=text+"<br><br><button onclick='this.parentElement.remove()'>OK</button>";
+ document.body.appendChild(box);
 }
 </script>
 
