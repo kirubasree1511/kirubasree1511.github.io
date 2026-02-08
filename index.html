@@ -1,36 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Friendship</title>
+<title>Friendship</title>
+<style>
+body{
+  background:#f7e9ea;
+  font-family:Arial;
+  text-align:center;
+  height:100vh;
+  overflow:hidden;
+}
 
-  <style>
-    body{
-      background:#f7e9ea;
-      font-family:Arial;
-      text-align:center;
-      height:100vh;
-      overflow:hidden;
-    }
+#funny{
+  position:absolute;
+  left:40%;
+  top:50%;
+  font-size:18px;
+  font-weight:bold;
+}
 
-    #funny{
-      position:absolute;
-      left:40%;
-      top:45%;
-      font-size:18px;
-      font-weight:bold;
-    }
+button{
+  padding:10px 18px;
+  border:none;
+  border-radius:8px;
+  margin:10px;
+}
 
-    button{
-      padding:10px 18px;
-      border:none;
-      border-radius:8px;
-      margin:10px;
-      cursor:pointer;
-    }
-
-    #yes{background:#ff4d6d;color:white;}
-    #no{position:absolute;}
-  </style>
+#yes{background:#ff4d6d;color:white;}
+#no{position:absolute;}
+</style>
 </head>
 
 <body>
@@ -39,12 +37,11 @@
 
 <div id="funny">Konjam yosichu click pannu 😉</div>
 
-<br><br>
-<button id="yes" onclick="nextFunny()">YES</button>
+<button onclick="nextFunny()">YES</button>
 <button id="no" onmouseover="moveNo()">NO</button>
 
 <script>
-let lines = [
+const lines = [
 "Konjam yosichu click pannu 😉",
 "Sure ah friend ah irupa? 🤝",
 "Last chance think panniko 🙂",
@@ -52,25 +49,25 @@ let lines = [
 "Okay okay click pannidu 😄"
 ];
 
-let count = 0;
+let index = 0;
 
 function nextFunny(){
-  let f = document.getElementById("funny");
+  const f = document.getElementById("funny");
 
-  if(count < lines.length){
-    f.innerHTML = lines[count];
+  if(index < lines.length){
+    f.textContent = lines[index];
     f.style.left = Math.random()*300 + "px";
     f.style.top = Math.random()*300 + "px";
-    count++;
-  }else{
-    f.innerHTML = "Friends forever Karuvaya 💖";
+    index++;
+  } else {
+    f.textContent = "Friends forever Karuvaya 💖";
     f.style.left = "40%";
-    f.style.top = "45%";
+    f.style.top = "50%";
   }
 }
 
 function moveNo(){
-  let btn = document.getElementById("no");
+  const btn = document.getElementById("no");
   btn.style.left = Math.random()*350 + "px";
   btn.style.top = Math.random()*350 + "px";
 }
