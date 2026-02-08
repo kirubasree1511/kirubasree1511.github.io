@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Thangoo ❤️</title>
+
+<style>
+body{
+  text-align:center;
+  font-family:Arial;
+  background:#ffe6eb;
+  margin-top:100px;
+}
+
+button{
+  padding:12px 22px;
+  font-size:18px;
+  border:none;
+  border-radius:10px;
+  margin:10px;
+  cursor:pointer;
+}
+
+#yes{
+  background:#ff4d6d;
+  color:white;
+}
+
+#no{
+  position:absolute;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Karuva kunjii thangooo ❤️<br>Will you be my Valentine?</h2>
+
+<button id="yes" onclick="funYes()">YES</button>
+<button id="no" onclick="moveNo()">NO</button>
+
+<script>
+let messages = [
+"Thango konjam yosichi click panu 😌",
+"Karuva kunji sure ah?",
+"Click pana poriyah?",
+"Idhan un final decision ah?",
+"Okay okay last chance nala think panikoo 🙂",
+"Thangoooo mind change aagudha?",
+"Karuva kunjii pavum pona poogudhu nu veduren 🥺"
+];
+
+let count = 0;
+
+function funYes(){
+ let btn = document.getElementById("yes");
+
+ if(count < messages.length){
+   btn.innerText = messages[count];
+   btn.style.position = "absolute";
+   btn.style.top = Math.random()*400 + "px";
+   btn.style.left = Math.random()*300 + "px";
+   count++;
+ }else{
+   document.body.innerHTML="<h1>Yay ❤️ Thangoo!</h1>";
+ }
+}
+
+function moveNo(){
+ let btn = document.getElementById("no");
+ btn.style.top = Math.random()*400 + "px";
+ btn.style.left = Math.random()*300 + "px";
+}
+</script>
+
+</body>
+</html>
